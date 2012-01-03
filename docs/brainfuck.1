@@ -1,0 +1,45 @@
+.TH brainfuck 1 "May 2011"
+
+.SH NAME
+brainfuck - a brainfuck interperter with (virtually) unlimited cells
+
+.SH SYNOPSIS
+brainfuck
+.B [-f
+.I filename
+.B ]
+.B [--safemode]
+.B [--help]
+.B [--input
+.I input
+.B ]
+
+.SH DESCRIPTION
+.P
+Just another brainfuck interpreter. It supports the 8 standard operations + - , . [ ] < >. It supports unlimited cells, so it is also unlimited to the left. Also, a safemode as included as an opcional safety measure: right now, this mode only check for unbalanced brackets.
+
+.SH OPTIONS
+.B
+.IP "-f filename"
+Specify a file with the brainfuck code to be interpreted. If ommited, it reads from the stdin (standard input). If there file does not exists, it returns an error message and quits.
+
+.B
+.IP "-h , --debug"
+Shows some help text to the user, with all the possible arguments it can take.
+
+.B
+.IP --safemode
+Checks for unbalanced loop brakcets in the code. It is not enable by default. When reading from input, since the code is only interpreted after all the input is typed, this mode also works in that conditions.
+
+.B
+.IP "--input input, -i input"
+Pass arguments to your brainfuck program. If a brainfuck program uses the , (comma) instruction, it will read the characters passed by this option
+Remember that , (comma operator) only reads one char at a time. If there areno more elements in the buffer, the brainfuck program will read from the standard input. The character is echoed to the standard output when read by , (comma operator).
+
+.SH BUGS
+The code is not optimized, and can contain several bugs. Please report them to <asilva_sc@hotmail.com>
+
+.SH AUTHOR
+The program was created by André Silva <asilva_sc@hotmail.com>.
+
+.\".SH SEE ALSO
