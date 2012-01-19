@@ -16,25 +16,25 @@ brainfuck
 
 .SH DESCRIPTION
 .P
-Just another brainfuck interpreter. It supports the 8 standard operations + - , . [ ] < >. It supports unlimited cells, so it is also unlimited to the left. Also, a safemode as included as an opcional safety measure: right now, this mode only check for unbalanced brackets.
+Just another brainfuck interpreter. Supports the 8 standard operations + - , . [ ] < >. It also supports unlimited cells, so you can always move the pointer to the left and to the right. An optional safemode is included, which ensures that the code brackets are balanced.
 
 .SH OPTIONS
 .B
 .IP "-f filename"
-Specify a file with the brainfuck code to be interpreted. If ommited, it reads from the stdin (standard input). If there file does not exists, it returns an error message and quits.
+Specify a file with the brainfuck code to be interpreted. If ommited, it reads the code from the stdin (standard input). If the file cannote be opened for read, it returns an error message and terminates the execution.
 
 .B
 .IP "-h , --debug"
-Shows some help text to the user, with all the possible arguments it can take.
+Shows some help text to the user, with all the possible arguments the program accepts.
 
 .B
 .IP --safemode
-Checks for unbalanced loop brakcets in the code. It is not enable by default. When reading from input, since the code is only interpreted after all the input is typed, this mode also works in that conditions.
+Checks for unbalanced loop brakcets in the code. It is not enable by default. This option also checks for code from stdin (standard input).
 
 .B
 .IP "--input input, -i input"
-Pass arguments to your brainfuck program. If a brainfuck program uses the , (comma) instruction, it will read the characters passed by this option
-Remember that , (comma operator) only reads one char at a time. If there areno more elements in the buffer, the brainfuck program will read from the standard input. The character is echoed to the standard output when read by , (comma operator).
+Pass arguments to your brainfuck program. If a brainfuck program uses the , (comma operator), the program will read the characters passed by this option.
+Remember that , (comma operator) only reads one single character per call. If there are no more elements in the buffer, the brainfuck program will read from the standard input. The character is echoed to the standard output when read by , (comma operator).
 
 .SH BUGS
 The code is not optimized, and can contain several bugs. Please report them to <asilva_sc@hotmail.com>
