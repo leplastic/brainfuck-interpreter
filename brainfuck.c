@@ -190,7 +190,7 @@ int safemode_check(char* code) {
 				break;
 			
 			case ']':
-				if (stack[pos - 1] != '[') {
+				if (pos == 0 || stack[pos - 1] != '[') {
 					free(stack);
 					return 0;
 					
